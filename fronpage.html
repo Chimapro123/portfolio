@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="frontpage.css">
+    <script src="frontpage.js" defer></script>
+    <title>CareryDave - Your Personal Health Companion</title>
+
+    <!-- We will add CSS here later -->
+</head>
+
+<body>
+<body>
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+    <!-- HEADER / NAVIGATION -->
+    <header>
+
+        <div class="logo">
+            <h1>CareryDave</h1>
+            <p>Your Health Companion</p>
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#assistant">AI Assistant</a>
+            <a href="#journal">Health Journal</a>
+            <a href="#medication">Medication</a>
+            <a href="#emergency">Emergency</a>
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- WELCOME SECTION -->
+        <section id="dashboard">
+
+            <div class="welcome-section">
+
+                <h2>Good Morning 👋</h2>
+
+                <p>
+                    Welcome to CareryDave. Your personal health companion
+                    for understanding and managing your daily health.
+                </p>
+
+            </div>
+
+
+            <!-- HEALTH DASHBOARD -->
+            <section class="health-dashboard">
+
+                <h2>Your Health Today</h2>
+
+
+                <!-- BLOOD PRESSURE -->
+                <article class="health-card">
+
+                    <h3>🩺 Blood Pressure</h3>
+
+                    <p>
+                        No record yet
+                    </p>
+
+                    <button>
+                        Add Blood Pressure
+                    </button>
+
+                </article>
+
+
+                <!-- WEIGHT -->
+                <article class="health-card">
+
+                    <h3>⚖️ Weight</h3>
+
+                    <p>
+                        No record yet
+                    </p>
+
+                    <button>
+                        Add Weight
+                    </button>
+
+                </article>
+
+
+                <!-- SLEEP -->
+                <article class="health-card">
+
+                    <h3>😴 Sleep</h3>
+
+                    <p>
+                        No record yet
+                    </p>
+
+                    <button>
+                        Add Sleep Record
+                    </button>
+
+                </article>
+
+
+                <!-- WATER -->
+                <article class="health-card">
+
+                    <h3>💧 Water Intake</h3>
+
+                    <p>
+                        0 glasses today
+                    </p>
+
+                    <button>
+                        Add Water
+                    </button>
+
+                </article>
+
+
+                <!-- EXERCISE -->
+                <article class="health-card">
+
+                    <h3>🏃 Exercise</h3>
+
+                    <p>
+                        No exercise recorded
+                    </p>
+
+                    <button>
+                        Add Exercise
+                    </button>
+
+                </article>
+
+
+                <!-- MOOD -->
+                <article class="health-card">
+
+                    <h3>😊 Mood</h3>
+
+                    <p>
+                        How are you feeling today?
+                    </p>
+
+                    <button>
+                        Record Mood
+                    </button>
+
+                </article>
+
+            </section>
+
+        </section>
+
+
+        <!-- AI HEALTH ASSISTANT -->
+        <section id="assistant">
+
+            <h2>🤖 AI Health Assistant</h2>
+
+            <p>
+                Ask CareryDave a general health question.
+            </p>
+
+            <div class="chat-area">
+
+                <div class="ai-message">
+
+                    <p>
+                        Hello! I'm your CareryDave health assistant.
+                        How can I help you understand your health today?
+                    </p>
+
+                </div>
+
+
+                <form>
+
+                    <label for="health-question">
+                        Ask a health question
+                    </label>
+
+                    <input type="text" id="health-question" placeholder="Example: Why do I feel tired?">
+
+                    <button type="submit">
+                        Ask CareryDave
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- HEALTH INSIGHTS -->
+        <section id="insights">
+
+            <h2>📊 Health Insights</h2>
+
+            <p>
+                Your health insights will appear here as CareryDave
+                learns from your health records.
+            </p>
+
+            <article class="insight-card">
+
+                <h3>Your First Insight</h3>
+
+                <p>
+                    Start recording your daily health information
+                    to receive personalized health insights.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- HEALTH JOURNAL -->
+        <section id="journal">
+
+            <h2>🎤 Voice Health Journal</h2>
+
+            <p>
+                Record how you feel and keep track of your daily health experiences.
+            </p>
+
+            <form>
+
+                <label for="health-note">
+                    Write a health note
+                </label>
+
+                <textarea id="health-note" placeholder="Example: I have a headache today and I slept badly."></textarea>
+
+                <button type="submit">
+                    Save Health Note
+                </button>
+
+            </form>
+
+            <button>
+                🎤 Record Voice Note
+            </button>
+
+        </section>
+
+
+        <!-- MEDICATION -->
+        <section id="medication">
+
+            <h2>💊 Medication Reminder</h2>
+
+            <p>
+                Add your medication and remember when to take it.
+            </p>
+
+            <form>
+
+                <label for="medicine-name">
+                    Medicine Name
+                </label>
+
+                <input type="text" id="medicine-name" placeholder="Enter medicine name">
+
+
+                <label for="medicine-time">
+                    Reminder Time
+                </label>
+
+                <input type="time" id="medicine-time">
+
+                <button type="submit">
+                    Add Medication Reminder
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- EMERGENCY SUPPORT -->
+        <section id="emergency">
+
+            <h2>🚨 Emergency Support</h2>
+
+            <p>
+                Store important emergency information and quickly contact
+                someone you trust when needed.
+            </p>
+
+            <button>
+                Emergency Contact
+            </button>
+
+            <button>
+                View Health Information
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 CareryDave. Your Personal Health Companion.
+        </p>
+
+        <p>
+            CareryDave provides general health information and is not
+            a replacement for professional medical advice.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript will be added here later -->
+<!-- <script src="frontpage.js"></script> -->
+</body>
+
+</html>

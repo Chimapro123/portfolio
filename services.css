@@ -1,0 +1,526 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+/* body{
+     width: 89.5;
+} */
+
+/* =========================
+   SERVICES SECTION
+========================= */
+
+.services-section {
+    width: 84.0%;
+
+    padding: 110px 8%;
+
+    background: #0f0f0f;
+
+    color: white;
+}
+
+
+.services-container {
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   SERVICES INTRO
+========================= */
+
+.services-intro {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 50px;
+
+    margin-bottom: 70px;
+}
+
+
+.services-heading {
+    max-width: 600px;
+}
+
+
+.services-heading .section-label,
+.services-cta .section-label {
+    color: #00ff88;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+
+.services-heading h2 {
+    font-size: 65px;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+
+.services-heading h2 span {
+    color: #00ff88;
+}
+
+
+.services-description {
+    max-width: 420px;
+}
+
+
+.services-description p {
+    color: #999999;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+}
+
+
+.services-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #00ff88;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+
+.services-link:hover {
+    gap: 18px;
+}
+
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.service-card {
+    position: relative;
+
+    min-height: 420px;
+
+    padding: 35px;
+
+    background: #181818;
+
+    border: 1px solid #292929;
+
+    overflow: hidden;
+
+    transition: 0.4s ease;
+}
+
+
+.service-card:hover {
+    border-color: #00ff88;
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.08);
+}
+
+
+.service-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: #00ff88;
+
+    opacity: 0;
+
+    filter: blur(80px);
+
+    right: -50px;
+
+    bottom: -50px;
+
+    transition: 0.4s ease;
+}
+
+
+.service-card:hover::before {
+    opacity: 0.15;
+}
+
+
+/* =========================
+   CARD NUMBER
+========================= */
+
+.service-number {
+    color: #555555;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   SERVICE ICON
+========================= */
+
+.service-icon {
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #00ff88;
+
+    color: #00ff88;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    transition: 0.4s ease;
+}
+
+
+.service-card:hover .service-icon {
+    background: #00ff88;
+
+    color: #0f0f0f;
+
+    transform: rotate(8deg);
+}
+
+
+/* =========================
+   SERVICE CONTENT
+========================= */
+
+.service-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.service-content h3 {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+
+.service-content>p {
+    max-width: 450px;
+
+    color: #999999;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   SERVICE LIST
+========================= */
+
+.service-list {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.service-list li {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #cccccc;
+
+    font-size: 14px;
+}
+
+
+.service-list li span {
+    color: #00ff88;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   SERVICE ARROW
+========================= */
+
+.service-arrow {
+    position: absolute;
+
+    top: 30px;
+
+    right: 30px;
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid #333333;
+
+    color: #888888;
+
+    font-size: 20px;
+
+    transition: 0.4s ease;
+}
+
+
+.service-card:hover .service-arrow {
+    border-color: #00ff88;
+
+    color: #00ff88;
+
+    transform: translate(5px, -5px);
+}
+
+
+/* =========================
+   SKILL TAGS
+========================= */
+
+.skill-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.skill-tags span {
+    padding: 8px 13px;
+
+    border: 1px solid #333333;
+
+    color: #aaaaaa;
+
+    font-size: 12px;
+
+    border-radius: 20px;
+
+    transition: 0.3s ease;
+}
+
+
+.skill-tags span:hover {
+    color: #00ff88;
+
+    border-color: #00ff88;
+}
+
+
+/* =========================
+   SERVICES CTA
+========================= */
+
+.services-cta {
+    margin-top: 80px;
+
+    padding: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    background: #181818;
+
+    border: 1px solid #292929;
+}
+
+
+.services-cta h2 {
+    max-width: 600px;
+
+    font-size: 42px;
+
+    line-height: 1.2;
+}
+
+
+.services-cta h2 span {
+    color: #00ff88;
+}
+
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 16px 25px;
+
+    background: #00ff88;
+
+    color: #0f0f0f;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    transition: 0.3s ease;
+}
+
+
+.cta-button:hover {
+    background: white;
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .services-intro {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    .services-heading h2 {
+        font-size: 52px;
+    }
+
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .services-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .services-section {
+        padding: 80px 20px;
+    }
+
+
+    .services-heading h2 {
+        font-size: 42px;
+    }
+
+
+    .service-card {
+        min-height: auto;
+
+        padding: 25px;
+    }
+
+
+    .service-content h3 {
+        font-size: 24px;
+    }
+
+
+    .services-cta {
+        padding: 30px;
+    }
+
+
+    .services-cta h2 {
+        font-size: 32px;
+    }
+
+
+    .cta-button {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}

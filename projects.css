@@ -1,0 +1,633 @@
+/* =====================================================
+RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+/* =====================================================
+BODY
+===================================================== */
+
+body {
+background: black;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: #f0f3f9;
+}
+
+/* =====================================================
+HEADER
+===================================================== */
+
+.header {
+width: 100%;
+background: black;
+box-shadow: 0 2px 10px rgba(108, 98, 98, 0.4);
+}
+
+.next-header {
+width: 90%;
+max-width: 1200px;
+min-height: 80px;
+margin: auto;
+
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+padding: 15px 0;
+
+
+}
+
+/* =====================================================
+LOGO
+===================================================== */
+
+.right-text {
+animation:
+logoAppear 1s ease forwards,
+logoFloat 4s ease-in-out infinite 1s;
+/* animation: introAppear 1.2s ease forwards; */
+
+
+opacity: 0;
+
+
+}
+
+.right-text h2 {
+font-size: 32px;
+color: white;
+cursor: pointer;
+}
+
+.right-text span {
+color: #00d9ff;
+font-size: 38px;
+}
+
+/* Logo Animation */
+
+@keyframes logoAppear {
+
+
+from {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+}
+
+@keyframes logoFloat {
+
+
+0% {
+    transform: translateY(0);
+}
+
+50% {
+    transform: translateY(-6px);
+}
+
+100% {
+    transform: translateY(0);
+}
+
+
+}
+
+/* =====================================================
+NAVIGATION
+===================================================== */
+.left-text{
+
+padding: 10px 20px;
+
+animation: introAppear 1.2s ease forwards;
+/* border: none; */
+border-radius: 35px;
+
+background: transparent;
+color: white;
+
+font-size: 16px;
+cursor: pointer;
+font-style: italic;
+transition: .4s;
+}
+
+.left-text:hover {
+
+background: #00d9ff;
+font-size: 19px;
+
+color: white;
+
+transform: translateY(-4px);
+
+
+}
+
+.left-text:active {
+transform: scale(.95);
+}
+
+/* =====================================================
+PROJECT INTRODUCTION
+===================================================== */
+
+.projects-intro {
+width: 90%;
+max-width: 900px;
+/* background: red; */
+
+margin: 100px auto 60px;
+
+text-align: center;
+
+animation: introAppear 1.2s ease forwards;
+
+}
+
+.projects-intro h5 {
+color: #00d9ff;
+
+
+font-size: 16px;
+
+letter-spacing: 5px;
+
+margin-bottom: 20px;
+
+
+}
+
+.projects-intro h1 {
+font-size: 5rem;
+
+
+margin-bottom: 20px;
+
+
+}
+
+.projects-intro h1 span {
+color: #00d9ff;
+
+
+font-style: italic;
+
+
+}
+
+.projects-intro p {
+color: #d7d7d7;
+
+
+font-size: 17px;
+
+line-height: 1.8;
+
+
+}
+
+/* Intro Animation */
+
+@keyframes introAppear {
+from {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+}
+
+/* =====================================================
+PROJECTS CONTAINER
+===================================================== */
+
+.projects-container {
+width: 90%;
+max-width: 1200px;
+
+/* background: red; */
+margin: auto;
+
+display: grid;
+
+grid-template-columns: repeat(2, 1fr);
+
+gap: 35px;
+
+padding-bottom: 100px;
+
+
+}
+
+/* =====================================================
+PROJECT CARD
+===================================================== */
+
+.project-card {
+position: relative;
+
+
+/* min-height: 400px; */
+
+padding: 35px;
+
+border-radius: 20px;
+
+background:
+    linear-gradient(
+        145deg,
+        #050505,
+        #101820,
+        #050505
+    );
+
+border: 1px solid rgba(0, 217, 255, 0.2);
+
+overflow: hidden;
+
+transition: .5s;
+
+animation: projectAppear 1s ease forwards;
+
+opacity: 0;
+
+
+}
+
+/* Project Cards Appear One By One */
+
+.project-card:nth-child(1) {
+animation-delay: .2s;
+}
+
+.project-card:nth-child(2) {
+animation-delay: .4s;
+}
+
+.project-card:nth-child(3) {
+animation-delay: .6s;
+}
+
+.project-card:nth-child(4) {
+animation-delay: .8s;
+}
+
+/* Project Card Hover */
+
+.project-card:hover {
+transform: translateY(-12px);
+
+
+border-color: #00d9ff;
+
+box-shadow:
+    0 0 15px rgba(0, 217, 255, .3),
+    0 0 40px rgba(0, 217, 255, .1);
+
+
+}
+
+/* Project Number */
+
+.project-number {
+position: absolute;
+
+
+top: 20px;
+right: 25px;
+
+font-size: 60px;
+
+font-weight: bold;
+
+color: rgba(0, 217, 255, .08);
+
+
+}
+
+/* Project Content */
+
+.project-content {
+position: relative;
+z-index: 2;
+}
+
+.project-content h2 {
+color: #00d9ff;
+
+
+font-size: 30px;
+
+margin-bottom: 10px;
+
+
+}
+
+.project-content h3 {
+color: bisque;
+
+
+font-size: 18px;
+
+margin-bottom: 20px;
+
+
+}
+
+.project-content p {
+color: #ddd;
+
+
+font-size: 15px;
+
+line-height: 1.8;
+
+margin-bottom: 25px;
+
+
+}
+
+/* =====================================================
+TECHNOLOGIES
+===================================================== */
+
+.technologies {
+display: flex;
+
+
+flex-wrap: wrap;
+
+gap: 10px;
+
+margin-bottom: 30px;
+
+
+}
+
+.technologies span {
+padding: 8px 14px;
+
+
+border-radius: 20px;
+
+background: rgba(0, 217, 255, .1);
+
+color: #00d9ff;
+
+font-size: 13px;
+
+border: 1px solid rgba(0, 217, 255, .3);
+
+transition: .3s;
+
+
+}
+
+.technologies span:hover {
+background: #00d9ff;
+
+
+color: black;
+
+transform: translateY(-3px);
+
+
+}
+
+/* =====================================================
+VIEW PROJECT BUTTON
+===================================================== */
+
+.view-project {
+padding: 12px 22px;
+
+
+border: none;
+
+border-radius: 30px;
+
+background: transparent;
+
+color: white;
+
+font-size: 15px;
+
+cursor: pointer;
+
+border: 1px solid rgba(0, 217, 255, .5);
+
+transition: .4s;
+
+
+}
+
+.view-project:hover {
+background: #00d9ff;
+
+
+color: black;
+
+transform: translateX(8px);
+
+box-shadow:
+    0 0 15px rgba(0, 217, 255, .7);
+
+
+}
+
+/* =====================================================
+PROJECT APPEAR ANIMATION
+===================================================== */
+
+@keyframes projectAppear {
+
+
+from {
+    opacity: 0;
+
+    transform:
+        translateY(70px)
+        scale(.95);
+}
+
+to {
+    opacity: 1;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+}
+
+/* =====================================================
+FOOTER
+===================================================== */
+
+footer {
+width: 100%;
+
+
+padding: 30px;
+
+text-align: center;
+
+background:
+    linear-gradient(
+        rgba(2, 54, 65, .2),
+        rgb(3, 31, 41)
+    );
+
+color: #aaa;
+
+font-size: 14px;
+
+
+}
+
+/* =====================================================
+TABLETS
+===================================================== */
+
+@media (max-width: 878px) {
+
+
+.next-header {
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.left-text ul {
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.projects-intro h1 {
+    font-size: 4rem;
+}
+
+.projects-container {
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+}
+
+}
+
+/* =====================================================
+MOBILE PHONES
+===================================================== */
+
+@media (max-width: 600px) {
+
+.next-header {
+    width: 100%;
+
+    padding: 20px 15px;
+}
+
+.left-text ul {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.left-text button {
+    width: 220px;
+}
+
+.projects-intro {
+    width: 90%;
+
+    margin-top: 70px;
+}
+
+.projects-intro h1 {
+    font-size: 3.2rem;
+}
+
+.projects-intro p {
+    font-size: 14px;
+}
+
+.project-card {
+    min-height: auto;
+
+    padding: 25px;
+}
+
+.project-number {
+    font-size: 45px;
+}
+
+.project-content h2 {
+    font-size: 24px;
+}
+
+.project-content h3 {
+    font-size: 16px;
+}
+
+.project-content p {
+    font-size: 14px;
+}
+
+
+}
+
+/* =====================================================
+VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 400px) {
+
+
+.right-text h2 {
+    font-size: 25px;
+}
+
+.right-text span {
+    font-size: 30px;
+}
+
+.projects-intro h1 {
+    font-size: 2.7rem;
+}
+
+.project-card {
+    padding: 20px;
+}
+
+
+}

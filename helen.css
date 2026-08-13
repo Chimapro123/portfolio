@@ -1,0 +1,834 @@
+*{
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+body{
+    background: rgb(228, 179, 228);
+    color: aliceblue;
+}
+.head{
+    width: 100%;
+    height: 10vh;
+    background: rgb(13, 37, 20);
+}
+.neck{
+    /* width: 80%; */
+    width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        height: 80px;
+        /* display: flex; */
+        justify-content: space-between;
+        align-items: center;
+    
+}
+.left-head {
+    animation: right-textFade 1s ease forwards,
+            float 4s ease-in-out infinite 1s;
+        transition: transform .4s ease,
+            filter .4s ease;
+        /* opacity: 0; */
+}
+.left-head:hover{
+    transform: scale(1.08);
+        filter:
+            drop-shadow(0 0 15px rgba(255, 255, 255, .35));
+} 
+@keyframes left-headFade {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+.left-head h2{
+    /* margin-left: 1rem; */
+font-size: 32px;
+    color: white;
+    cursor: pointer;
+    font-style: italic;
+    cursor: pointer;
+}
+.left-head span{
+    color: greenyellow;
+}
+/* _________________________________________ */
+/* =========================
+   GENERAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7faf8;
+    color: #173b2d;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #e5eee9;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    color: #176b45;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #345447;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #159957;
+}
+
+.shop-btn {
+    text-decoration: none;
+    color: white;
+    background-color: #176b45;
+
+    padding: 12px 20px;
+    border-radius: 25px;
+
+    transition: 0.3s ease;
+}
+
+.shop-btn:hover {
+    background-color: #0f4d32;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #176b45;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #0f4d32;
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    border: 1px solid #176b45;
+    color: #176b45;
+    background-color: transparent;
+}
+
+.secondary-btn:hover {
+    background-color: #176b45;
+    color: white;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 100px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+    gap: 60px;
+}
+
+.small-heading {
+    color: #159957;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-text h2 {
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #143c2d;
+}
+
+.hero-text h2 span,
+.section-heading h2 span,
+.advice-content h2 span {
+    color: #159957;
+}
+
+.hero-text>p {
+    max-width: 500px;
+    color: #63786e;
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.hero-image:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: auto;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.section-heading>p:last-child {
+    color: #6c7d74;
+}
+
+
+/* =========================
+   ANIMAL SECTION
+========================= */
+
+.animals-section {
+    padding: 100px 30px;
+    background-color: white;
+}
+
+.animal-cards {
+    max-width: 1200px;
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.animal-card {
+    background-color: #f5f9f6;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    padding-bottom: 25px;
+
+    transition: 0.3s ease;
+}
+
+.animal-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.animal-card img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+}
+
+.animal-card h3,
+.animal-card p,
+.animal-card a {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.animal-card h3 {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.animal-card p {
+    color: #6d7d74;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.animal-card a {
+    color: #159957;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* =========================
+   ADVICE SECTION
+========================= */
+
+.advice-section {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 100px 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+.advice-content h2 {
+    font-size: 45px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.advice-content>p:not(.small-heading) {
+    color: #6c7d74;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.advice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.advice-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    border-left: 4px solid #159957;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.advice-item span {
+    font-size: 25px;
+    font-weight: bold;
+    color: #159957;
+}
+
+.advice-item h3 {
+    margin-bottom: 5px;
+}
+
+.advice-item p {
+    color: #718078;
+}
+
+
+/* =========================
+   VACCINE PRODUCTS
+========================= */
+
+.vaccine-section {
+    padding: 100px 30px;
+    background-color: white;
+}
+
+.vaccine-grid {
+    max-width: 1200px;
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+.vaccine-card {
+    background-color: #f7faf8;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.vaccine-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.vaccine-image {
+    height: 230px;
+    overflow: hidden;
+}
+
+.vaccine-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.vaccine-card:hover img {
+    transform: scale(1.08);
+}
+
+.vaccine-info {
+    padding: 25px;
+}
+
+.category {
+    color: #159957;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.vaccine-info h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.vaccine-info>p:not(.category) {
+    color: #6c7d74;
+    margin-bottom: 25px;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-bottom strong {
+    font-size: 20px;
+    color: #176b45;
+}
+
+.product-bottom button {
+    border: none;
+
+    background-color: #176b45;
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.product-bottom button:hover {
+    background-color: #0f4d32;
+}
+
+
+/* =========================
+   VACCINE CHECKER
+========================= */
+
+.vaccine-checker {
+    max-width: 1200px;
+    margin: 100px auto;
+
+    padding: 60px;
+
+    background-color: #e8f4ed;
+
+    border-radius: 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.checker-text h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.checker-text>p:not(.small-heading) {
+    color: #61756a;
+}
+
+.vaccine-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vaccine-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.vaccine-form select,
+.vaccine-form input {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #cbdcd1;
+
+    border-radius: 10px;
+
+    background-color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.vaccine-form select:focus,
+.vaccine-form input:focus {
+    border-color: #159957;
+}
+
+.vaccine-form button {
+    margin-top: 15px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background-color: #176b45;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.vaccine-form button:hover {
+    background-color: #0f4d32;
+}
+
+
+/* =========================
+   TRUST SECTION
+========================= */
+
+.trust-section {
+    max-width: 1200px;
+    margin: 100px auto;
+
+    padding: 0 30px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.trust-box {
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    border: 1px solid #e1ebe5;
+}
+
+.trust-box h3 {
+    margin-bottom: 10px;
+}
+
+.trust-box p {
+    color: #6d7d74;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #143c2d;
+    color: white;
+
+    padding: 60px 30px 25px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 50px;
+}
+
+.footer-brand h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.footer-brand p,
+.footer-contact p {
+    color: #bdd0c4;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #bdd0c4;
+
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+
+    margin: 50px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #416254;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #bdd0c4;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+
+    .animal-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-text h2 {
+        font-size: 48px;
+    }
+
+    .vaccine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 60px;
+    }
+
+    .hero-text h2 {
+        font-size: 42px;
+    }
+
+    .hero-image {
+        height: 350px;
+    }
+
+    .advice-section {
+        grid-template-columns: 1fr;
+    }
+
+    .vaccine-checker {
+        grid-template-columns: 1fr;
+
+        margin-left: 20px;
+        margin-right: 20px;
+
+        padding: 35px;
+    }
+
+    .trust-section {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .animal-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .vaccine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+    .section-heading h2,
+    .advice-content h2,
+    .checker-text h2 {
+        font-size: 34px;
+    }
+
+}
