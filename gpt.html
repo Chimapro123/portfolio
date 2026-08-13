@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi-Shop 🍰 — Cakes, Cupcakes & Pastries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --blush: #FBE8E3;
+            --box-white: #FFFCF7;
+            --cocoa: #3B2419;
+            --raspberry: #C23A5E;
+            --raspberry-dark: #A22C4B;
+            --butter: #EFAF3C;
+            --mint: #7FAE8C;
+            --line: rgba(59, 36, 25, 0.12);
+            --shadow: 0 8px 24px rgba(59, 36, 25, 0.10);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--blush);
+            color: var(--cocoa);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        img,
+        svg {
+            display: block;
+        }
+
+        ::selection {
+            background: var(--butter);
+            color: var(--cocoa);
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--raspberry);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(251, 232, 227, 0.88);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 28px;
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--cocoa);
+        }
+
+        .logo .dot {
+            color: var(--raspberry);
+        }
+
+        nav.main-nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav.main-nav a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--cocoa);
+            opacity: 0.75;
+            transition: opacity 0.2s, color 0.2s;
+            position: relative;
+        }
+
+        nav.main-nav a:hover {
+            opacity: 1;
+            color: var(--raspberry);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .cart-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--cocoa);
+            color: var(--box-white);
+            padding: 10px 16px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .cart-btn:hover {
+            background: var(--raspberry);
+            transform: translateY(-1px);
+        }
+
+        .cart-count {
+            background: var(--butter);
+            color: var(--cocoa);
+            min-width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0 4px;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.6rem;
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            padding: 64px 0 40px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--box-white);
+            border: 1px solid var(--line);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--raspberry);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 5vw, 4rem);
+            line-height: 1.02;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .accent {
+            color: var(--raspberry);
+        }
+
+        .hero p.lede {
+            font-size: 1.1rem;
+            line-height: 1.55;
+            opacity: 0.8;
+            max-width: 460px;
+            margin-bottom: 30px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 38px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 26px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 0.98rem;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--raspberry);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--raspberry-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1.5px solid var(--cocoa);
+            color: var(--cocoa);
+        }
+
+        .btn-ghost:hover {
+            background: var(--cocoa);
+            color: #fff;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 34px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero-stats strong {
+            font-family: 'Fredoka';
+            font-size: 1.4rem;
+            color: var(--cocoa);
+        }
+
+        .hero-stats span {
+            font-size: 0.82rem;
+            opacity: 0.65;
+        }
+
+        .hero-art {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-art svg {
+            width: 100%;
+            max-width: 420px;
+            filter: drop-shadow(0 18px 30px rgba(59, 36, 25, 0.18));
+        }
+
+        .crumb {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--butter);
+            opacity: 0.55;
+        }
+
+        /* scallop divider — piped-frosting edge, used between sections */
+        .scallop {
+            width: 100%;
+            height: 26px;
+            display: block;
+            background: radial-gradient(circle at 10px 0, transparent 12px, var(--box-white) 12.5px) 0 -1px / 24px 26px repeat-x;
+        }
+
+        .scallop.flip {
+            transform: scaleY(-1);
+        }
+
+        /* ---------- CATEGORY CHIPS ---------- */
+        .categories {
+            background: var(--box-white);
+            padding: 26px 0 30px;
+        }
+
+        .chip-row {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+        }
+
+        .chip-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .chip {
+            flex: 0 0 auto;
+            padding: 10px 20px;
+            border-radius: 100px;
+            border: 1.5px solid var(--line);
+            font-weight: 600;
+            font-size: 0.92rem;
+            background: var(--blush);
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            white-space: nowrap;
+        }
+
+        .chip.active,
+        .chip:hover {
+            background: var(--cocoa);
+            color: #fff;
+            border-color: var(--cocoa);
+        }
+
+        /* ---------- PRODUCTS ---------- */
+        .products {
+            background: var(--box-white);
+            padding: 20px 0 70px;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-head h2 {
+            font-size: 1.9rem;
+        }
+
+        .section-head p {
+            opacity: 0.65;
+            font-size: 0.95rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--blush);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s, box-shadow 0.25s;
+            position: relative;
+            border: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--line);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 4px 10px;
+            border-radius: 100px;
+            color: #fff;
+        }
+
+        .tag-best {
+            background: var(--raspberry);
+        }
+
+        .tag-new {
+            background: var(--mint);
+        }
+
+        .card-visual {
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.4rem;
+            margin-bottom: 14px;
+            margin-top: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 4px;
+        }
+
+        .card .desc {
+            font-size: 0.84rem;
+            opacity: 0.65;
+            margin-bottom: 14px;
+            line-height: 1.4;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .price {
+            font-family: 'Fredoka';
+            font-weight: 600;
+            font-size: 1.15rem;
+        }
+
+        .add-btn {
+            background: var(--cocoa);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            transition: background 0.2s, transform 0.15s;
+            flex: 0 0 auto;
+        }
+
+        .add-btn:hover {
+            background: var(--raspberry);
+        }
+
+        .add-btn:active {
+            transform: scale(0.9);
+        }
+
+        /* ---------- WHY US ---------- */
+        .why {
+            padding: 70px 0;
+            background: var(--blush);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+            margin-top: 36px;
+        }
+
+        .why-item {
+            background: var(--box-white);
+            border-radius: 18px;
+            padding: 26px;
+            border: 1px solid var(--line);
+        }
+
+        .why-item .ic {
+            font-size: 1.9rem;
+            margin-bottom: 12px;
+        }
+
+        .why-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            font-size: 0.88rem;
+            opacity: 0.68;
+            line-height: 1.5;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--cocoa);
+            color: var(--blush);
+            padding: 54px 0 26px;
+        }
+
+        .foot-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        footer h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            opacity: 0.6;
+            margin-bottom: 14px;
+            font-family: 'Work Sans';
+            font-weight: 700;
+        }
+
+        footer .logo {
+            color: var(--blush);
+            margin-bottom: 12px;
+        }
+
+        footer p.desc {
+            font-size: 0.88rem;
+            opacity: 0.7;
+            line-height: 1.6;
+            max-width: 280px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 9px;
+            font-size: 0.88rem;
+            opacity: 0.75;
+        }
+
+        footer li a:hover {
+            opacity: 1;
+            color: var(--butter);
+        }
+
+        .foot-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            opacity: 0.55;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* ---------- CART DRAWER (signature element: bakery box) ---------- */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(59, 36, 25, 0.42);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            z-index: 90;
+        }
+
+        .overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: min(420px, 92vw);
+            background: var(--box-white);
+            z-index: 100;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(.65, 0, .35, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: -10px 0 40px rgba(59, 36, 25, 0.25);
+        }
+
+        .drawer.open {
+            transform: translateX(0);
+        }
+
+        .drawer-lid {
+            background: var(--cocoa);
+            color: var(--box-white);
+            padding: 22px 24px 16px;
+            position: relative;
+        }
+
+        .drawer-lid .scallop {
+            background: radial-gradient(circle at 10px 0, transparent 12px, var(--cocoa) 12.5px) 0 -1px / 24px 26px repeat-x;
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            transform: scaleY(-1);
+        }
+
+        .drawer-lid h2 {
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .drawer-lid .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--box-white);
+            font-size: 1.4rem;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .drawer-lid .close:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .drawer-lid .ribbon {
+            width: 56px;
+            height: 4px;
+            background: var(--raspberry);
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 38px 24px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .empty-box {
+            text-align: center;
+            padding: 50px 10px;
+            opacity: 0.6;
+        }
+
+        .empty-box .ic {
+            font-size: 2.6rem;
+            margin-bottom: 10px;
+        }
+
+        .line-item {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            background: var(--blush);
+            border-radius: 14px;
+            padding: 12px;
+        }
+
+        .li-emoji {
+            font-size: 1.8rem;
+            width: 42px;
+            text-align: center;
+            flex: 0 0 auto;
+        }
+
+        .li-info {
+            flex: 1;
+        }
+
+        .li-info h4 {
+            font-size: 0.94rem;
+            margin-bottom: 2px;
+        }
+
+        .li-info .li-price {
+            font-size: 0.82rem;
+            opacity: 0.65;
+        }
+
+        .stepper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stepper button {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: var(--box-white);
+            border: 1px solid var(--line);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stepper button:hover {
+            background: var(--cocoa);
+            color: #fff;
+        }
+
+        .stepper span {
+            font-weight: 600;
+            min-width: 16px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .remove-x {
+            opacity: 0.45;
+            font-size: 0.85rem;
+            margin-left: 6px;
+        }
+
+        .remove-x:hover {
+            opacity: 1;
+            color: var(--raspberry);
+        }
+
+        .drawer-note {
+            padding: 0 24px 14px;
+        }
+
+        .drawer-note label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            opacity: 0.65;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .drawer-note textarea {
+            width: 100%;
+            resize: none;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            background: var(--blush);
+        }
+
+        .drawer-footer {
+            padding: 18px 24px 26px;
+            border-top: 1px solid var(--line);
+        }
+
+        .subtotal-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+            opacity: 0.75;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Fredoka';
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 15px;
+            background: var(--raspberry);
+            color: #fff;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .checkout-btn:hover {
+            background: var(--raspberry-dark);
+        }
+
+        .checkout-btn:disabled {
+            background: var(--line);
+            color: rgba(59, 36, 25, 0.4);
+            cursor: not-allowed;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 26px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--cocoa);
+            color: var(--box-white);
+            padding: 14px 22px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 200;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width:940px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 40px;
+            }
+
+            .hero-art {
+                order: -1;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .foot-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width:640px) {
+            nav.main-nav {
+                display: none;
+            }
+
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .foot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#top" class="logo">Chi-Shop <span class="dot">🍰</span></a>
+            <nav class="main-nav">
+                <a href="#shop">Shop</a>
+                <a href="#why">Why us</a>
+                <a href="#footer">Visit</a>
+            </nav>
+            <div class="header-right">
+                <button class="cart-btn" id="openCart" aria-label="Open cart">
+                    📦 Box <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero wrap">
+            <div>
+                <span class="eyebrow">🍰 Baked fresh every morning</span>
+                <h1>Little cakes,<br>big <span class="accent">happiness.</span></h1>
+                <p class="lede">Chi-Shop bakes small-batch cakes, cupcakes, and pastries and packs them straight into a
+                    box for you — no filler, no fuss, just good butter and real fruit.</p>
+                <div class="hero-ctas">
+                    <a href="#shop" class="btn btn-primary">Browse the case →</a>
+                    <a href="#why" class="btn btn-ghost">Our story</a>
+                </div>
+                <div class="hero-stats">
+                    <div><strong>24</strong><span>Fresh items daily</span></div>
+                    <div><strong>4.9★</strong><span>From 2,300+ orders</span></div>
+                    <div><strong>60 min</strong><span>Same-day delivery</span></div>
+                </div>
+            </div>
+            <div class="hero-art">
+                <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="200" r="180" fill="#FFFCF7" />
+                    <!-- cake stand -->
+                    <rect x="120" y="330" width="160" height="10" rx="5" fill="#3B2419" />
+                    <rect x="185" y="300" width="30" height="34" fill="#3B2419" />
+                    <ellipse cx="200" cy="300" rx="95" ry="16" fill="#3B2419" />
+                    <!-- cake slice -->
+                    <path d="M120 290 L200 130 L280 290 Z" fill="#EFAF3C" />
+                    <path d="M132 290 L200 155 L268 290 Z" fill="#F7C978" />
+                    <rect x="120" y="280" width="160" height="14" fill="#C23A5E" />
+                    <rect x="132" y="255" width="136" height="10" fill="#FBE8E3" />
+                    <rect x="146" y="230" width="108" height="10" fill="#FBE8E3" />
+                    <rect x="160" y="205" width="80" height="10" fill="#FBE8E3" />
+                    <circle cx="200" cy="140" r="9" fill="#C23A5E" />
+                    <!-- crumbs -->
+                    <circle cx="90" cy="330" r="6" fill="#C23A5E" opacity="0.7" />
+                    <circle cx="310" cy="320" r="8" fill="#7FAE8C" opacity="0.7" />
+                    <circle cx="70" cy="200" r="5" fill="#EFAF3C" opacity="0.7" />
+                    <circle cx="330" cy="180" r="6" fill="#C23A5E" opacity="0.5" />
+                </svg>
+            </div>
+        </section>
+
+        <div class="scallop"></div>
+
+        <!-- CATEGORIES -->
+        <section class="categories">
+            <div class="wrap">
+                <div class="chip-row" id="chipRow">
+                    <button class="chip active" data-cat="all">All</button>
+                    <button class="chip" data-cat="cakes">🎂 Cakes</button>
+                    <button class="chip" data-cat="cupcakes">🧁 Cupcakes</button>
+                    <button class="chip" data-cat="cookies">🍪 Cookies</button>
+                    <button class="chip" data-cat="pastries">🥐 Pastries</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section class="products" id="shop">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <h2>Today's case</h2>
+                        <p>Everything ships fresh — order before 4pm for same-day delivery.</p>
+                    </div>
+                </div>
+                <div class="grid" id="productGrid"></div>
+            </div>
+        </section>
+
+        <!-- WHY US -->
+        <section class="why" id="why">
+            <div class="wrap">
+                <div class="section-head" style="margin-bottom:0;">
+                    <div>
+                        <h2>Why Chi-Shop</h2>
+                        <p>Small kitchen, short ingredient list, no shortcuts.</p>
+                    </div>
+                </div>
+                <div class="why-grid">
+                    <div class="why-item">
+                        <div class="ic">🧈</div>
+                        <h3>Real butter, real fruit</h3>
+                        <p>No shortening, no artificial flavoring — just the ingredients you'd use at home, scaled up
+                            carefully.</p>
+                    </div>
+                    <div class="why-item">
+                        <div class="ic">🚲</div>
+                        <h3>Baked to your order</h3>
+                        <p>Nothing sits in a case overnight. Your box is baked the same day it's packed and sent out.
+                        </p>
+                    </div>
+                    <div class="why-item">
+                        <div class="ic">💌</div>
+                        <h3>A note in every box</h3>
+                        <p>Add a message at checkout and we'll tuck a handwritten card in with your order, free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <div class="wrap">
+            <div class="foot-grid">
+                <div>
+                    <a href="#top" class="logo">Chi-Shop 🍰</a>
+                    <p class="desc">A small neighborhood bakery, now shipping little boxes of cake wherever you are.</p>
+                </div>
+                <div>
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#shop">Cakes</a></li>
+                        <li><a href="#shop">Cupcakes</a></li>
+                        <li><a href="#shop">Cookies</a></li>
+                        <li><a href="#shop">Pastries</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Visit</h4>
+                    <ul>
+                        <li>Mon–Sat, 8am – 6pm</li>
+                        <li>Closed Sundays</li>
+                        <li>123 Baker's Row</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="foot-bottom">
+                <span>© 2026 Chi-Shop. All cakes baked with care.</span>
+                <span>Made with 🍰 for people who like frosting.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="drawer" id="drawer" aria-label="Shopping box">
+        <div class="drawer-lid">
+            <button class="close" id="closeCart" aria-label="Close cart">✕</button>
+            <h2>📦 Your box</h2>
+            <div class="ribbon"></div>
+            <div class="scallop"></div>
+        </div>
+        <div class="drawer-body" id="drawerBody"></div>
+        <div class="drawer-note">
+            <label for="note">Note for the baker (optional)</label>
+            <textarea id="note" rows="2" placeholder="e.g. Happy birthday, extra sprinkles please!"></textarea>
+        </div>
+        <div class="drawer-footer">
+            <div class="subtotal-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+            <div class="total-row"><span>Total</span><span id="total">$0.00</span></div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>Place order</button>
+        </div>
+    </aside>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const PRODUCTS = [
+            { id: 1, name: "Strawberry Shortcake", cat: "cakes", price: 38, tag: "best", emoji: "🍓", desc: "Vanilla sponge, whipped cream, fresh strawberries." },
+            { id: 2, name: "Dark Chocolate Fudge Cake", cat: "cakes", price: 42, tag: "best", emoji: "🍫", desc: "Rich cocoa layers with a ganache glaze." },
+            { id: 3, name: "Matcha Layer Cake", cat: "cakes", price: 40, tag: "new", emoji: "🍵", desc: "Ceremonial matcha sponge with white chocolate cream." },
+            { id: 4, name: "Classic Lemon Cake", cat: "cakes", price: 36, emoji: "🍋", desc: "Bright lemon curd folded through a buttery crumb." },
+            { id: 5, name: "Vanilla Bean Cupcake", cat: "cupcakes", price: 5, tag: "best", emoji: "🧁", desc: "Madagascar vanilla bean batter, swirled buttercream." },
+            { id: 6, name: "Red Velvet Cupcake", cat: "cupcakes", price: 5.5, emoji: "🧁", desc: "Cocoa-red crumb with tangy cream cheese frosting." },
+            { id: 7, name: "Salted Caramel Cupcake", cat: "cupcakes", price: 5.5, tag: "new", emoji: "🧁", desc: "Caramel-filled center, flaked sea salt on top." },
+            { id: 8, name: "Cookies & Cream Cupcake", cat: "cupcakes", price: 5.5, emoji: "🧁", desc: "Crushed cookie batter, cookie-dust frosting." },
+            { id: 9, name: "Brown Butter Chocolate Chip", cat: "cookies", price: 4, tag: "best", emoji: "🍪", desc: "Nutty brown butter dough, dark chocolate chunks." },
+            { id: 10, name: "Oatmeal Raisin Cookie", cat: "cookies", price: 3.5, emoji: "🍪", desc: "Chewy rolled oats with plump golden raisins." },
+            { id: 11, name: "Double Ginger Snap", cat: "cookies", price: 3.5, tag: "new", emoji: "🍪", desc: "Fresh and crystallized ginger, molasses base." },
+            { id: 12, name: "Butter Croissant", cat: "pastries", price: 4.5, tag: "best", emoji: "🥐", desc: "48-hour laminated dough, shatter-crisp layers." },
+            { id: 13, name: "Almond Danish", cat: "pastries", price: 5, emoji: "🥐", desc: "Frangipane filling, toasted almond slivers." },
+            { id: 14, name: "Cinnamon Roll", cat: "pastries", price: 5.5, tag: "new", emoji: "🥐", desc: "Brown sugar swirl, cream cheese icing." },
+        ];
+
+        let cart = {}; // id -> qty
+        let activeCat = "all";
+
+        const grid = document.getElementById('productGrid');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('overlay');
+        const drawerBody = document.getElementById('drawerBody');
+        const cartCount = document.getElementById('cartCount');
+        const subtotalEl = document.getElementById('subtotal');
+        const totalEl = document.getElementById('total');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const toast = document.getElementById('toast');
+
+        function renderProducts() {
+            const items = activeCat === "all" ? PRODUCTS : PRODUCTS.filter(p => p.cat === activeCat);
+            grid.innerHTML = items.map(p => `
+      <div class="card">
+        ${p.tag === 'best' ? '<span class="card-tag tag-best">Bestseller</span>' : ''}
+        ${p.tag === 'new' ? '<span class="card-tag tag-new">New</span>' : ''}
+        <div class="card-visual">${p.emoji}</div>
+        <h3>${p.name}</h3>
+        <p class="desc">${p.desc}</p>
+        <div class="card-footer">
+          <span class="price">$${p.price.toFixed(2)}</span>
+          <button class="add-btn" data-id="${p.id}" aria-label="Add ${p.name} to box">+</button>
+        </div>
+      </div>
+    `).join('');
+        }
+
+        function renderCart() {
+            const ids = Object.keys(cart).filter(id => cart[id] > 0);
+            if (ids.length === 0) {
+                drawerBody.innerHTML = `<div class="empty-box"><div class="ic">📭</div><p>Your box is empty.<br>Add something sweet.</p></div>`;
+                checkoutBtn.disabled = true;
+            } else {
+                drawerBody.innerHTML = ids.map(id => {
+                    const p = PRODUCTS.find(x => x.id === Number(id));
+                    const qty = cart[id];
+                    return `
+          <div class="line-item">
+            <div class="li-emoji">${p.emoji}</div>
+            <div class="li-info">
+              <h4>${p.name}</h4>
+              <div class="li-price">$${p.price.toFixed(2)} each</div>
+            </div>
+            <div class="stepper">
+              <button data-id="${id}" data-action="dec" aria-label="Decrease quantity">–</button>
+              <span>${qty}</span>
+              <button data-id="${id}" data-action="inc" aria-label="Increase quantity">+</button>
+            </div>
+            <button class="remove-x" data-id="${id}" data-action="remove" aria-label="Remove item">✕</button>
+          </div>
+        `;
+                }).join('');
+                checkoutBtn.disabled = false;
+            }
+
+            let subtotal = 0, count = 0;
+            ids.forEach(id => {
+                const p = PRODUCTS.find(x => x.id === Number(id));
+                subtotal += p.price * cart[id];
+                count += cart[id];
+            });
+            const delivery = subtotal > 0 ? (subtotal > 30 ? 0 : 5) : 0;
+            subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+            totalEl.textContent = `$${(subtotal + delivery).toFixed(2)}`;
+            cartCount.textContent = count;
+        }
+
+        function addToCart(id, showToastMsg = true) {
+            cart[id] = (cart[id] || 0) + 1;
+            renderCart();
+            if (showToastMsg) {
+                const p = PRODUCTS.find(x => x.id === Number(id));
+                showToast(`${p.emoji} Added ${p.name} to your box`);
+            }
+        }
+
+        function showToast(msg) {
+            toast.textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toast._t);
+            toast._t = setTimeout(() => toast.classList.remove('show'), 2200);
+        }
+
+        function openDrawer() {
+            drawer.classList.add('open');
+            overlay.classList.add('open');
+        }
+        function closeDrawer() {
+            drawer.classList.remove('open');
+            overlay.classList.remove('open');
+        }
+
+        document.getElementById('chipRow').addEventListener('click', e => {
+            const chip = e.target.closest('.chip');
+            if (!chip) return;
+            document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            activeCat = chip.dataset.cat;
+            renderProducts();
+        });
+
+        grid.addEventListener('click', e => {
+            const btn = e.target.closest('.add-btn');
+            if (!btn) return;
+            addToCart(btn.dataset.id);
+        });
+
+        drawerBody.addEventListener('click', e => {
+            const btn = e.target.closest('button[data-action]');
+            if (!btn) return;
+            const id = btn.dataset.id;
+            const action = btn.dataset.action;
+            if (action === 'inc') cart[id] = (cart[id] || 0) + 1;
+            if (action === 'dec') cart[id] = Math.max(0, (cart[id] || 0) - 1);
+            if (action === 'remove') cart[id] = 0;
+            renderCart();
+        });
+
+        document.getElementById('openCart').addEventListener('click', openDrawer);
+        document.getElementById('closeCart').addEventListener('click', closeDrawer);
+        overlay.addEventListener('click', closeDrawer);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+        checkoutBtn.addEventListener('click', () => {
+            if (checkoutBtn.disabled) return;
+            showToast('🎉 Order placed! Your box is on its way.');
+            cart = {};
+            renderCart();
+            closeDrawer();
+        });
+
+        renderProducts();
+        renderCart();
+    </script>
+
+</body>
+
+</html>

@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Main.css">
-    <script src="DAVIID.js" defer></script>
+    <!-- <script src="DAVIID.js" defer></script> -->
     <title>David Eze PortFolio..</title>
 </head>
 <body>
-    <!-- <script>
-        document.write("hello ");
-        let fullname = "Chima david "
-        document.writeln("Welcome " + fullname)
-    </script> -->
+ 
+<script>
+    document.querySelector(".right-text").addEventListener("mouseover", () => {
+            document.querySelector("body").style.color = "rgb(236, 238, 167)";
+        });
+        document.querySelector(".dark").addEventListener("click", () => {
+            document.querySelector("body").classList.toggle("dark-mode");
+        });
+</script>
     <div class="header">
         <div class="next-header">
          <div class="right-text">
             <h2><a href="welcome.html"><span>D</span>Tech<span>.</span></a></h2>
-        </div>
+        </div> 
           
          <div class="left-text" id="options"> 
             <ul>
