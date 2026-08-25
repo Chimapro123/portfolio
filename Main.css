@@ -19,6 +19,9 @@ a {
     text-decoration: none;
     color: #f0f3f9;
 }
+hr{
+    color: #1fafe4;
+}
 
 /* Header */
 .header {
@@ -158,6 +161,7 @@ a {
 .hero{
     width: 100%;
     height: 50vh;
+    padding-bottom: 28rem;
     
 }
 .hero-box{
@@ -176,6 +180,7 @@ a {
     line-height: 4rem;
     font-size: 1rem;
     font-style: italic;
+    margin-bottom: 1px;
     
 }
 .hero-left{
@@ -196,6 +201,9 @@ a {
     font-weight:bolder;
     line-height: 5rem;
     font-style: italic;
+    stroke: #060606;
+    stroke-width: 4px;
+
    
     /* border: 2px solid black; */
     
@@ -225,7 +233,7 @@ background: black;
 }
 
 .hero-left p{
-    margin-top: 0rem;
+    margin-bottom: 3rem;
     font-style: italic;
 }
 
@@ -247,7 +255,6 @@ background: black;
     cursor: pointer;
         transition: .5s;
 }
-
 .hero-right img:hover{
   
     background: linear-gradient(rgb(177, 102, 102),
@@ -293,6 +300,7 @@ background: black;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 /* Grid container */
