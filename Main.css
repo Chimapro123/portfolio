@@ -73,24 +73,13 @@ hr{
     border-radius: 7px;
 }
 
-.logo-tech {
-    /* background: #5e84dbf6; */
+.logo-text{
+    background: #5e84dbf6;
     color: #0F172A;
     font-weight: 800;
     border-radius: 5px;
 }
 
-.logo-code {
-    color: #64748B;
-    font-weight: 600;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #111111;
-    letter-spacing: -2px;
-}
 .right-text{
     /* color: #00d9ff; */
     animation: logoGlow 3s ease-in-out infinite alternate;
