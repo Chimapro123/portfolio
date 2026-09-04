@@ -74,7 +74,7 @@ hr{
 }
 
 .logo-text{
-    background: #5e84dbf6;
+  
     color: #0F172A;
     font-weight: 800;
     border-radius: 5px;
@@ -247,6 +247,7 @@ hr{
 .dark-mode {
 /* background: #7e8187; */
 background: black;
+
 }
 
 .hero-left h4{
@@ -264,8 +265,6 @@ background: black;
     color: rgb(96, 168, 118);
     margin-left: 24.65rem;
     font-style: oblique;
-
-
 }
 
 .hero-left p{
